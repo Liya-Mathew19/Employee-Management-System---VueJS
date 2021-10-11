@@ -21,6 +21,11 @@ export default new Router({
       path: "/addEmployee",
       name: "addEmployee",
       component: () => import("@/components/EmployeeBasic/EmployeeAdd")
-    }
+    },
+    {
+        path: "/updateEmployee/:id",
+        name: "employee-details",
+        component: () => import("@/components/EmployeeBasic/EmployeeUpdate")
+      },
   ]
 });

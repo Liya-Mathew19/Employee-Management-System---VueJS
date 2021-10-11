@@ -4,7 +4,7 @@
         <div class="col-lg-12 col-md-12">
             <div class="card" style="min-height: 485px">
                 <div class="card-header card-header-text">
-                    <h4 class="card-title">ADD NEW EMPLOYEE</h4>
+                    <h4 class="card-title">UPDATE EMPLOYEE</h4>
                     </div>
                     <hr>
                     <div class="card-content">
@@ -20,26 +20,26 @@
                                             <h3 class="fw-normal mb-5" style="color: #4835d4;">Basic Information</h3>
                                             <div class="mb-4 pb-2">
                                                 <label class="form-label">Employee Personal ID</label>
-                                                <input type="text" v-model="employees.personalIdNumber" class="form-control form-control" />
+                                                <input type="text" v-model="employees.personalIdNumber" id="form3Examplev2" class="form-control form-control" />
                                             </div>
 
                                             <div class="row">
                                                 <div class="col-md-4 mb-4 pb-2">
                                                 <div class="form-outline">
                                                     <label class="form-label">First name</label>
-                                                    <input type="text" required v-model="employees.firstName" class="form-control form-control" />
+                                                    <input type="text" required v-model="employees.firstName" id="form3Examplev2" class="form-control form-control" />
                                                 </div>
                                                 </div>
                                                 <div class="col-md-4 mb-4 pb-2">
                                                 <div class="form-outline">
-                                                    <label class="form-label" for="form3Examplev3">Middle name</label>
-                                                    <input type="text" v-model="employees.middleName" id="form3Examplev3" class="form-control form-control" />
+                                                    <label class="form-label">Middle name</label>
+                                                    <input type="text" v-model="employees.middleName" class="form-control form-control" />
                                                 </div>
                                                 </div>
                                                 <div class="col-md-4 mb-4 pb-2">
                                                 <div class="form-outline">
-                                                    <label class="form-label" for="form3Examplev3">Last name</label>
-                                                    <input type="text" required v-model="employees.lastName" id="form3Examplev3" class="form-control form-control" />
+                                                    <label class="form-label">Last name</label>
+                                                    <input type="text" required v-model="employees.lastName" class="form-control form-control" />
                                                 </div>
                                                 </div>
                                             </div>
@@ -71,7 +71,7 @@
                                                 </div>
                                                 <div class="col-md-4 mb-4 pb-2">
                                                 <div class="form-outline">
-                                                    <label class="form-label" for="form3Examplev3">Month of Birth</label>
+                                                    <label class="form-label">Month of Birth</label>
                                                     <select required class="form-control form-control" v-model="employees.monthOfBirth">
                                                         <option value="">--Select--</option>
                                                         <option value="1">January</option><option value="2">February</option>
@@ -85,7 +85,7 @@
                                                 </div>
                                                 <div class="col-md-4 mb-4 pb-2">
                                                 <div class="form-outline">
-                                                    <label class="form-label" for="form3Examplev3">Year of Birth</label>
+                                                    <label class="form-label">Year of Birth</label>
                                                     <input type="text" required v-model="employees.yearOfBirth" id="form3Examplev4" class="form-control form-control" />
                                                 </div>
                                                 </div>
@@ -95,13 +95,13 @@
                                                 <div class="col-md-6 mb-4 pb-2">
                                                 <div class="form-outline">
                                                     <label class="form-label">Mobile</label>
-                                                    <input type="text" required v-model="employees.cellularPhone" class="form-control form-control" />
+                                                    <input type="text" required id="form3Examplev2" v-model="employees.cellularPhone" class="form-control form-control" />
                                                 </div>
                                                 </div>
                                                 <div class="col-md-6 mb-4 pb-2">
                                                 <div class="form-outline">
-                                                    <label class="form-label" for="form3Examplev3">Home Phone</label>
-                                                    <input type="text" required id="form3Examplev3" v-model="employees.homePhone" class="form-control form-control" />
+                                                    <label class="form-label">Home Phone</label>
+                                                    <input type="text" required v-model="employees.homePhone" class="form-control form-control" />
                                                 </div>
                                                 </div>
                                             </div>
@@ -110,13 +110,13 @@
                                                 <div class="col-md-6 mb-4 pb-2">
                                                 <div class="form-outline">
                                                     <label class="form-label">Address</label>
-                                                    <textarea required v-model="employees.address" class="form-control form-control" />
+                                                    <textarea id="form3Examplev2" required v-model="employees.address" class="form-control form-control" />
                                                 </div>
                                                 </div>
                                                 <div class="col-md-6 mb-4 pb-2">
                                                 <div class="form-outline">
-                                                    <label class="form-label" for="form3Examplev3">City</label>
-                                                    <input type="text" required id="form3Examplev3" v-model="employees.city" class="form-control form-control" />
+                                                    <label class="form-label">City</label>
+                                                    <input type="text" required v-model="employees.city" class="form-control form-control" />
                                                 </div>
                                                 </div>
                                             </div>
@@ -125,12 +125,12 @@
                                                 <div class="col-md-6 mb-4 pb-2">
                                                 <div class="form-outline">
                                                     <label class="form-label">Postal Code</label>
-                                                    <input type="text" required v-model="employees.postalCode" class="form-control form-control" />
+                                                    <input type="text" required id="form3Examplev2" v-model="employees.postalCode" class="form-control form-control" />
                                                 </div>
                                                 </div>
                                                 <div class="col-md-6 mb-4 pb-2">
                                                 <div class="form-outline">
-                                                    <label class="form-label" for="form3Examplev3">Marital Status</label>
+                                                    <label class="form-label">Marital Status</label>
                                                      <select class="form-control form-control" required v-model="employees.maritalStatus">
                                                         <option value="">--Select--</option>
                                                         <option value="Married">Married</option>
@@ -139,7 +139,7 @@
                                                 </div>
                                                 </div>
                                             </div>
-                                            <label class="form-label" for="form3Examplev3">Gender</label><br>
+                                            <label class="form-label">Gender</label><br>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" required v-model="employees.gender" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Male">
                                                 <label class="form-check-label" for="inlineRadio1">Male</label>
@@ -155,7 +155,7 @@
 
                                         </div>
                                     </div>
-                                    <div class="col-lg-6 bg-indigo text-white">
+                                    <div class="col-lg-6 bg-secondary text-white">
                                     <div class="p-5">
                                     <h3 class="fw-normal mb-5">Current Work Details</h3>
 
@@ -174,7 +174,7 @@
                                     </div>
                                     <div class="mb-4 pb-2">
                                         <div class="form-outline form-white">
-                                            <label class="form-label" for="form3Examplev3">Employement Type</label>
+                                            <label class="form-label">Employement Type</label>
                                                 <select class="form-control form-control" required v-model="employees.typeOfEmployee">
                                                     <option value="">--Select--</option>
                                                     <option value="Permanant">Permanant</option>
@@ -209,7 +209,7 @@
                                                 </div>
                                                 <div class="col-md-4 mb-4 pb-2">
                                                 <div class="form-outline">
-                                                    <label class="form-label" for="form3Examplev3">Start Month</label>
+                                                    <label class="form-label">Start Month</label>
                                                     <select class="form-control form-control" required v-model="employees.startDateMonth">
                                                         <option value="">--Select--</option>
                                                         <option value="1">January</option><option value="2">February</option>
@@ -223,7 +223,7 @@
                                                 </div>
                                                 <div class="col-md-4 mb-4 pb-2">
                                                 <div class="form-outline">
-                                                    <label class="form-label" for="form3Examplev3">Start Year</label>
+                                                    <label class="form-label">Start Year</label>
                                                     <input type="text" id="form3Examplev4" required v-model="employees.startDateYear" class="form-control form-control" />
                                                 </div>
                                                 </div>
@@ -256,7 +256,7 @@
                                                 </div>
                                                 <div class="col-md-4 mb-4 pb-2">
                                                 <div class="form-outline">
-                                                    <label class="form-label" for="form3Examplev3">End Month</label>
+                                                    <label class="form-label">End Month</label>
                                                     <select class="form-control form-control" v-model="employees.endDateMonth">
                                                         <option value="">--Select--</option>
                                                         <option value="1">January</option><option value="2">February</option>
@@ -270,12 +270,12 @@
                                                 </div>
                                                 <div class="col-md-4 mb-4 pb-2">
                                                 <div class="form-outline">
-                                                    <label class="form-label" for="form3Examplev3">End Year</label>
+                                                    <label class="form-label">End Year</label>
                                                     <input type="text" id="form3Examplev4" v-model="employees.endDateYear" class="form-control form-control" />
                                                 </div>
                                                 </div>
                                             </div>
-                                            <button type="button" class="btn btn-warning btn-lg float-right mt-5" v-on:click="saveEmployee()">SUBMIT</button>
+                                            <button type="button" class="btn btn-warning btn-lg float-right mt-5" v-on:click="updateEmployee()">UPDATE</button>
                                     </div>
                                 </div>
                                 </div>
@@ -323,14 +323,45 @@ export default {
         gender:"",
         maritalStatus:""
       },
+      submitted: false,
+      editedEmp: null,
       message:"",
-      emp:"",
-      required:true
+      empId:""
     };
   },
-  methods: {        
-    saveEmployee() {
+  methods: {   
+    getEmployeeById(id){
+        EmployeeService.getEmployeeById(id).then(response =>{
+        this.employees.employeeIdNumber=response.data.employeeIdNumber     
+        this.employees.personalIdNumber=response.data.personalIdNumber,
+        this.employees.firstName=response.data.firstName,
+        this.employees.middleName=response.data.middleName,
+        this.employees.lastName=response.data.lastName,
+        this.employees.dayOfBirth=response.data.dayOfBirth,
+        this.employees.monthOfBirth=response.data.monthOfBirth,
+        this.employees.yearOfBirth=response.data.yearOfBirth,
+        this.employees.cellularPhone=response.data.cellularPhone,
+        this.employees.homePhone=response.data.homePhone,
+        this.employees.city=response.data.city,
+        this.employees.address=response.data.address,
+        this.employees.postalCode=response.data.postalCode,
+        this.employees.qualification=response.data.qualification,
+        this.employees.currentExperience=response.data.currentExperience,
+        this.employees.startDateDay=response.data.startDateDay,
+        this.employees.startDateMonth=response.data.startDateMonth,
+        this.employees.startDateYear=response.data.startDateYear,
+        this.employees.endDateDay=response.data.endDateDay,
+        this.employees.endDateMonth=response.data.endDateMonth,
+        this.employees.endDateYear=response.data.endDateYear,
+        this.employees.typeOfEmployee=response.data.typeOfEmployee,
+        this.employees.gender=response.data.gender,
+        this.employees.maritalStatus=response.data.maritalStatus
+            console.log(response)
+        });
+    },     
+    updateEmployee() {
       var data = {
+        employeeIdNumber:this.employees.employeeIdNumber,
         personalIdNumber:this.employees.personalIdNumber,
         firstName:this.employees.firstName,
         middleName:this.employees.middleName,
@@ -355,16 +386,19 @@ export default {
         gender:this.employees.gender,
         maritalStatus:this.employees.maritalStatus
       };
-      EmployeeService.createEmployee(data)
+      EmployeeService.updateEmployee(data)
         .then(response => {
           console.log(response.data);
-          this.message="Employee added successfully!!";
-          this.$router.push("/employees"); 
+          alert("Employee data updated successfully!!");
+          this.$router.push("/employees/"+this.employees.employeeIdNumber); 
         })
         .catch(e => {
           console.log(e);
         });
     },
+  },
+   mounted() {
+    this.getEmployeeById(this.$route.params.id);
   }
 };
 </script>

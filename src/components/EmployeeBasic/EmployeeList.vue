@@ -1,7 +1,7 @@
 <template>
   <div class="main-content">
 	<div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
                     <div class="icon icon-warning float-left">
@@ -9,12 +9,12 @@
                     </div>
                     <div class="float-right text-center">
                         <h5 class="card-title">Total Employees</h5>
-                        <p class="card-text">{{employees.length}}</p>
+                        <p class="badge badge-primary fs-5" style="font-size:larger">{{employees.length}}</p>
                     </div>
                 </div>
-                <div class="card-footer mt-5">
+                <div class="card-footer">
                     <i class="material-icons text-info">info</i>
-                    <a href="#">See detailed list below</a>
+                    <a href="#">  See detailed list below</a>
                 </div>
             </div>
         </div>
@@ -27,8 +27,8 @@
 
 	<div class="row">
         <div class="col-lg-12 col-md-12">
-            <div class="card" style="min-height: 485px">
-                <div class="card-header card-header-text">
+            <div class="card mt-3" style="min-height: 485px">
+                <div class="card-header">
                     <a href="/addEmployee"><button class="btn btn-success float-right">
                         <span class="material-icons">
                             person_add
@@ -45,8 +45,8 @@
                     </div>
                     <div class="card-content table-responsive" v-if="employees.length > 0">
                         <table class="table table-hover table-bordered">
-                            <thead class="text-success">
-                                <tr>
+                            <thead>
+                                <tr class="bg-success text-white">
                                     <th>ID</th>
                                     <th>Name</th>
                                     <th>Date of Birth</th>

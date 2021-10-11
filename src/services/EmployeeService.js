@@ -13,8 +13,8 @@ class EmployeeService {
     return http.post("/employees/employees", data);
   }
 
-  updateEmployee(id, data) {
-    return http.put(`/employees/employees/${id}`, data);
+  updateEmployee(data) {
+    return http.put(`/employees/employees`, data);
   }
 
   deleteEmployee(id) {
