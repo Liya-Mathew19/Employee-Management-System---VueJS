@@ -54,6 +54,7 @@ Employee List
                         <table class="table table-hover table-bordered">
                             <thead>
                                 <tr class="bg-success text-white">
+                                    <th>#</th>
                                     <th>Personal ID</th>
                                     <th>Name</th>
                                     <th>Date of Birth</th>
@@ -64,7 +65,8 @@ Employee List
                             </thead>
                            
                             <tbody>
-                                <tr v-for="employee in employees" v-bind:key="employee.employeeIdNumber">
+                                <tr v-for="(employee, index) in employees" v-bind:key="employee.employeeIdNumber">
+                                    <td>{{index+1}}</td>
                                     <td>{{employee.personalIdNumber}}</td>
                                     <td>{{employee.firstName}} {{employee.lastName}}</td>
                                     <td>{{employee.dayOfBirth}}/{{employee.monthOfBirth}}/{{employee.yearOfBirth}} </td>
@@ -93,7 +95,7 @@ export default {
   data() {
     return {
       employees: [],
-      message:"",data:""
+      message:"",data:"",num:1
     };
   },
   methods: {
