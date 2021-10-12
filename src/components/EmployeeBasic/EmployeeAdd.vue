@@ -4,6 +4,10 @@
         <div class="col-lg-12 col-md-12">
             <div class="card" style="min-height: 485px">
                 <div class="card-header card-header-text">
+                    <button class="btn btn-primary" style="float:right" v-on:click="$router.go(-1)">
+                        <span class="material-icons">arrow_back</span> 
+                        <span class="p-3">Back</span>
+                    </button>
                     <h4 class="card-title">ADD NEW EMPLOYEE</h4>
                     </div>
                     <hr>
@@ -19,27 +23,27 @@
                                             <div class="p-5">
                                             <h3 class="fw-normal mb-5" style="color: #4835d4;">Basic Information</h3>
                                             <div class="mb-4 pb-2">
-                                                <label class="form-label">Employee Personal ID</label>
-                                                <input type="text" v-model="employees.personalIdNumber" class="form-control form-control" />
+                                                <label class="form-label">Employee Personal ID <span class="text-danger">*</span></label>
+                                                <input type="text" v-model="employees.personalIdNumber" class="form-control form-control" placeholder="Personal ID" />
                                             </div>
 
                                             <div class="row">
                                                 <div class="col-md-4 mb-4 pb-2">
                                                 <div class="form-outline">
-                                                    <label class="form-label">First name</label>
-                                                    <input type="text" required v-model="employees.firstName" class="form-control form-control" />
+                                                    <label class="form-label">First name <span class="text-danger">*</span></label>
+                                                    <input type="text"  v-model="employees.firstName" class="form-control form-control" placeholder="First Name"/>
                                                 </div>
                                                 </div>
                                                 <div class="col-md-4 mb-4 pb-2">
                                                 <div class="form-outline">
-                                                    <label class="form-label" for="form3Examplev3">Middle name</label>
-                                                    <input type="text" v-model="employees.middleName" id="form3Examplev3" class="form-control form-control" />
+                                                    <label class="form-label">Middle name</label>
+                                                    <input type="text" v-model="employees.middleName" class="form-control form-control" placeholder="Middle Name" />
                                                 </div>
                                                 </div>
                                                 <div class="col-md-4 mb-4 pb-2">
                                                 <div class="form-outline">
-                                                    <label class="form-label" for="form3Examplev3">Last name</label>
-                                                    <input type="text" required v-model="employees.lastName" id="form3Examplev3" class="form-control form-control" />
+                                                    <label class="form-label">Last name <span class="text-danger">*</span></label>
+                                                    <input type="text"  v-model="employees.lastName" class="form-control form-control" placeholder="Last Name" />
                                                 </div>
                                                 </div>
                                             </div>
@@ -47,9 +51,9 @@
                                             <div class="row">
                                                 <div class="col-md-4 mb-4 pb-2">
                                                 <div class="form-outline">
-                                                    <label class="form-label">Day of Birth</label>
-                                                    <select class="form-control form-control" required v-model="employees.dayOfBirth">
-                                                        <option value="">--Select--</option>
+                                                    <label class="form-label">Day of Birth <span class="text-danger">*</span></label>
+                                                    <select class="form-control form-control"  v-model="employees.dayOfBirth">
+                                                        <option value=null>--Select--</option>
                                                         <option value="1">1</option><option value="2">2</option>
                                                         <option value="3">3</option><option value="4">4</option>
                                                         <option value="5">5</option><option value="6">6</option>
@@ -71,9 +75,9 @@
                                                 </div>
                                                 <div class="col-md-4 mb-4 pb-2">
                                                 <div class="form-outline">
-                                                    <label class="form-label" for="form3Examplev3">Month of Birth</label>
-                                                    <select required class="form-control form-control" v-model="employees.monthOfBirth">
-                                                        <option value="">--Select--</option>
+                                                    <label class="form-label">Month of Birth <span class="text-danger">*</span></label>
+                                                    <select  class="form-control form-control" v-model="employees.monthOfBirth">
+                                                        <option value=null>--Select--</option>
                                                         <option value="1">January</option><option value="2">February</option>
                                                         <option value="3">March</option><option value="4">April</option>
                                                         <option value="5">May</option><option value="6">June</option>
@@ -85,8 +89,8 @@
                                                 </div>
                                                 <div class="col-md-4 mb-4 pb-2">
                                                 <div class="form-outline">
-                                                    <label class="form-label" for="form3Examplev3">Year of Birth</label>
-                                                    <input type="text" required v-model="employees.yearOfBirth" id="form3Examplev4" class="form-control form-control" />
+                                                    <label class="form-label">Year of Birth <span class="text-danger">*</span></label>
+                                                    <input type="text"  v-model="employees.yearOfBirth" class="form-control form-control" placeholder="Year of Birth" />
                                                 </div>
                                                 </div>
                                             </div>
@@ -94,14 +98,14 @@
                                             <div class="row">
                                                 <div class="col-md-6 mb-4 pb-2">
                                                 <div class="form-outline">
-                                                    <label class="form-label">Mobile</label>
-                                                    <input type="text" required v-model="employees.cellularPhone" class="form-control form-control" />
+                                                    <label class="form-label">Mobile <span class="text-danger">*</span></label>
+                                                    <input type="text"  v-model="employees.cellularPhone" class="form-control form-control" placeholder="Cellular Phone"/>
                                                 </div>
                                                 </div>
                                                 <div class="col-md-6 mb-4 pb-2">
                                                 <div class="form-outline">
-                                                    <label class="form-label" for="form3Examplev3">Home Phone</label>
-                                                    <input type="text" required id="form3Examplev3" v-model="employees.homePhone" class="form-control form-control" />
+                                                    <label class="form-label">Home Phone</label>
+                                                    <input type="text"  v-model="employees.homePhone" class="form-control form-control" placeholder="Home Phone" />
                                                 </div>
                                                 </div>
                                             </div>
@@ -110,13 +114,13 @@
                                                 <div class="col-md-6 mb-4 pb-2">
                                                 <div class="form-outline">
                                                     <label class="form-label">Address</label>
-                                                    <textarea required v-model="employees.address" class="form-control form-control" />
+                                                    <textarea  v-model="employees.address" class="form-control form-control" />
                                                 </div>
                                                 </div>
                                                 <div class="col-md-6 mb-4 pb-2">
                                                 <div class="form-outline">
-                                                    <label class="form-label" for="form3Examplev3">City</label>
-                                                    <input type="text" required id="form3Examplev3" v-model="employees.city" class="form-control form-control" />
+                                                    <label class="form-label">City</label>
+                                                    <input type="text"  v-model="employees.city" placeholder="City" class="form-control form-control" />
                                                 </div>
                                                 </div>
                                             </div>
@@ -125,13 +129,13 @@
                                                 <div class="col-md-6 mb-4 pb-2">
                                                 <div class="form-outline">
                                                     <label class="form-label">Postal Code</label>
-                                                    <input type="text" required v-model="employees.postalCode" class="form-control form-control" />
+                                                    <input type="text"  v-model="employees.postalCode" placeholder="Postal Code" class="form-control form-control" />
                                                 </div>
                                                 </div>
                                                 <div class="col-md-6 mb-4 pb-2">
                                                 <div class="form-outline">
-                                                    <label class="form-label" for="form3Examplev3">Marital Status</label>
-                                                     <select class="form-control form-control" required v-model="employees.maritalStatus">
+                                                    <label class="form-label">Marital Status</label>
+                                                     <select class="form-control form-control"  v-model="employees.maritalStatus">
                                                         <option value="">--Select--</option>
                                                         <option value="Married">Married</option>
                                                         <option value="Un-married">Un-married</option>
@@ -139,9 +143,9 @@
                                                 </div>
                                                 </div>
                                             </div>
-                                            <label class="form-label" for="form3Examplev3">Gender</label><br>
+                                            <label class="form-label">Gender <span class="text-danger">*</span></label><br>
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" required v-model="employees.gender" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Male">
+                                                <input class="form-check-input"  v-model="employees.gender" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Male">
                                                 <label class="form-check-label" for="inlineRadio1">Male</label>
                                             </div>
                                             <div class="form-check form-check-inline">
@@ -161,21 +165,21 @@
 
                                     <div class="mb-4 pb-2">
                                         <div class="form-outline form-white">
-                                            <label class="form-label" for="form3Examplea2">Qualification</label>
-                                            <input type="text" required id="form3Examplea2" v-model="employees.qualification" class="form-control form-control" />
+                                            <label class="form-label">Qualification</label>
+                                            <input type="text"   placeholder="Qualification" v-model="employees.qualification" class="form-control form-control" />
                                         </div>
                                     </div>
 
                                     <div class="mb-4 pb-2">
                                         <div class="form-outline form-white">
-                                            <label class="form-label" for="form3Examplea3">Current Experience</label>
-                                            <input type="text" required id="form3Examplea3" v-model="employees.currentExperience" class="form-control form-control" />
+                                            <label class="form-label">Current Experience</label>
+                                            <input type="text"  placeholder="Current Experience" v-model="employees.currentExperience" class="form-control form-control" />
                                         </div>
                                     </div>
                                     <div class="mb-4 pb-2">
                                         <div class="form-outline form-white">
-                                            <label class="form-label" for="form3Examplev3">Employement Type</label>
-                                                <select class="form-control form-control" required v-model="employees.typeOfEmployee">
+                                            <label class="form-label">Employement Type</label>
+                                                <select class="form-control form-control"  v-model="employees.typeOfEmployee">
                                                     <option value="">--Select--</option>
                                                     <option value="Permanant">Permanant</option>
                                                     <option value="Contract">Contract</option>
@@ -185,9 +189,9 @@
                                     <div class="row">
                                             <div class="col-md-4 mb-4 pb-2">
                                                 <div class="form-outline">
-                                                    <label class="form-label">Start Day</label>
-                                                    <select class="form-control form-control" required v-model="employees.startDateDay">
-                                                        <option value="">--Select--</option>
+                                                    <label class="form-label">Start Day <span class="text-danger">*</span></label>
+                                                    <select class="form-control form-control"  v-model="employees.startDateDay">
+                                                        <option value=null>--Select--</option>
                                                         <option value="1">1</option><option value="2">2</option>
                                                         <option value="3">3</option><option value="4">4</option>
                                                         <option value="5">5</option><option value="6">6</option>
@@ -209,9 +213,9 @@
                                                 </div>
                                                 <div class="col-md-4 mb-4 pb-2">
                                                 <div class="form-outline">
-                                                    <label class="form-label" for="form3Examplev3">Start Month</label>
-                                                    <select class="form-control form-control" required v-model="employees.startDateMonth">
-                                                        <option value="">--Select--</option>
+                                                    <label class="form-label">Start Month <span class="text-danger">*</span></label>
+                                                    <select class="form-control form-control"  v-model="employees.startDateMonth">
+                                                        <option value=null>--Select--</option>
                                                         <option value="1">January</option><option value="2">February</option>
                                                         <option value="3">March</option><option value="4">April</option>
                                                         <option value="5">May</option><option value="6">June</option>
@@ -223,8 +227,8 @@
                                                 </div>
                                                 <div class="col-md-4 mb-4 pb-2">
                                                 <div class="form-outline">
-                                                    <label class="form-label" for="form3Examplev3">Start Year</label>
-                                                    <input type="text" id="form3Examplev4" required v-model="employees.startDateYear" class="form-control form-control" />
+                                                    <label class="form-label">Start Year <span class="text-danger">*</span></label>
+                                                    <input type="text"  v-model="employees.startDateYear" placeholder="Start Year" class="form-control form-control" />
                                                 </div>
                                                 </div>
                                             </div>
@@ -234,7 +238,7 @@
                                                 <div class="form-outline">
                                                     <label class="form-label">End Day</label>
                                                     <select class="form-control form-control" v-model="employees.endDateDay">
-                                                        <option value="">--Select--</option>
+                                                        <option value=null>--Select--</option>
                                                         <option value="1">1</option><option value="2">2</option>
                                                         <option value="3">3</option><option value="4">4</option>
                                                         <option value="5">5</option><option value="6">6</option>
@@ -256,9 +260,9 @@
                                                 </div>
                                                 <div class="col-md-4 mb-4 pb-2">
                                                 <div class="form-outline">
-                                                    <label class="form-label" for="form3Examplev3">End Month</label>
+                                                    <label class="form-label">End Month</label>
                                                     <select class="form-control form-control" v-model="employees.endDateMonth">
-                                                        <option value="">--Select--</option>
+                                                        <option value=null>--Select--</option>
                                                         <option value="1">January</option><option value="2">February</option>
                                                         <option value="3">March</option><option value="4">April</option>
                                                         <option value="5">May</option><option value="6">June</option>
@@ -270,8 +274,8 @@
                                                 </div>
                                                 <div class="col-md-4 mb-4 pb-2">
                                                 <div class="form-outline">
-                                                    <label class="form-label" for="form3Examplev3">End Year</label>
-                                                    <input type="text" id="form3Examplev4" v-model="employees.endDateYear" class="form-control form-control" />
+                                                    <label class="form-label">End Year</label>
+                                                    <input type="text" v-model="employees.endDateYear" placeholder="End Year" class="form-control form-control" />
                                                 </div>
                                                 </div>
                                             </div>
@@ -323,13 +327,18 @@ export default {
         gender:"",
         maritalStatus:""
       },
-      message:"",
-      emp:"",
-      required:true
     };
   },
   methods: {        
     saveEmployee() {
+        if(!this.employees.personalIdNumber || !this.employees.firstName 
+        || !this.employees.lastName || !this.employees.dayOfBirth || !this.employees.monthOfBirth
+        || !this.employees.yearOfBirth || !this.employees.cellularPhone || !this.employees.gender
+        || !this.employees.startDateDay || !this.employees.startDateMonth|| !this.employees.startDateYear)
+        {
+            alert("Please Fill the mandatory(*) fields !!");
+        }
+        else{
       var data = {
         personalIdNumber:this.employees.personalIdNumber,
         firstName:this.employees.firstName,
@@ -358,12 +367,13 @@ export default {
       EmployeeService.createEmployee(data)
         .then(response => {
           console.log(response.data);
-          this.message="Employee added successfully!!";
+          alert("Employee added successfully!!");
           this.$router.push("/employees"); 
         })
         .catch(e => {
           console.log(e);
         });
+    }
     },
   }
 };

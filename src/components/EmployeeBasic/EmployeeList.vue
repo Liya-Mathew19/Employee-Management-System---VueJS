@@ -62,9 +62,11 @@
                                     <td>{{employee.firstName}} {{employee.lastName}}</td>
                                     <td>{{employee.dayOfBirth}}/{{employee.monthOfBirth}}/{{employee.yearOfBirth}} </td>
                                     <td>{{employee.cellularPhone}}</td>
-                                    <td>{{employee.typeOfEmployee}}</td>
+                                    <td><span class="badge badge-warning">{{employee.typeOfEmployee}}</span></td>
                                     <td>
-                                        <a v-bind:href="'/employees/'+employee.employeeIdNumber"><span class="material-icons" style="color:blue;cursor:pointer">visibility</span></a>
+                                        <a v-bind:href="'/employees/'+employee.employeeIdNumber">
+                                            <span class="material-icons" style="color:blue;cursor:pointer">visibility</span>
+                                        </a>
                                         <span class="material-icons" style="color:red;cursor:pointer;padding-left:50px" v-on:click="deleteEmployee(employee.employeeIdNumber)">delete</span>
                                     </td>
                                 </tr>
@@ -84,7 +86,7 @@ export default {
   data() {
     return {
       employees: [],
-      message:""
+      message:"",data:""
     };
   },
   methods: {

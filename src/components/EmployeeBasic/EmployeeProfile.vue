@@ -3,6 +3,10 @@
 	<div class="row ">
         <div class="col-lg-12 col-md-12">
             <div class="container mt-3" style="min-height: 485px; background-color:#fff">
+                <button class="btn btn-primary mt-2" style="float:right" v-on:click="$router.go(-1)">
+                    <span class="material-icons">arrow_back</span> 
+                    <span class="p-3">Back</span>
+                </button>
                 <h3 class="pt-4 text-danger">EMPLOYEE PROFILE - {{employees.firstName}} {{employees.lastName}} ({{employees.personalIdNumber}})</h3>
                  <hr>
                  <div v-if="message" class="alert alert-danger mt-5">
@@ -164,13 +168,17 @@
                                         <div class="card-header bg-primary text-white">
                                             <h4 style="float:left">Work History</h4>
                                             <span class="material-icons" style="cursor:pointer;float:right" v-on:click="deleteWork(work.employeeIdNumber)">delete</span>
-                                            <button type="button" class="btn mr-4 text-white" style="float:right;margin-top: -6px;" data-toggle="modal" data-target="#myModal">
+                                             <a v-bind:href="'/updateWorkHistory/'+work.employeeIdNumber">
+                                            <button v-if="!workError" type="button" class="btn mr-4 text-white" style="float:right;margin-top: -6px;" data-toggle="modal" data-target="#myModal">
                                                 <span class="material-icons" style="cursor:pointer;">edit</span>
                                             </button>
+                                            </a>
                                         </div>
                                         <div class="card-body">
                                             <div v-if="workError">
+                                               <a v-bind:href="'/addWorkHistory/'+employees.employeeIdNumber">
                                                 <button class="btn btn-success">Add Work History</button>
+                                               </a>
                                             </div>
                                             <ul class="list-group" v-else>
                                                 <li class="list-group-item d-flex justify-content-between">
@@ -316,10 +324,10 @@ export default {
         salary:[],
         contact:[],
         message:"",
-        workError:"",salError:"",timeError:"",contactError:"",empError:""
+        workError:"",salError:"",timeError:"",contactError:"",empError:"",
     };
   },
-  methods: {        
+  methods: { 
     getEmployeeById(id){
             EmployeeService.getEmployeeById(id).then(response =>{
                 this.employees = response.data;
@@ -389,6 +397,7 @@ export default {
         console.log(response.data)
         this.message = "Deleted the employee contact details successfully !!";
         this.getContactInfoById();
+        window.scrollTo(0,0);
         });
         }
     },
@@ -398,6 +407,7 @@ export default {
         console.log(response.data)
         this.message = "Deleted the employee salary details successfully !!";
         this.getSalaryById();
+        window.scrollTo(0,0);
         });
         }
     },
@@ -407,6 +417,7 @@ export default {
         console.log(response.data)
         this.message = "Deleted the employee time details successfully !!";
         this.getTimeInfoById();
+        window.scrollTo(0,0);
         });
         }
     },
@@ -416,6 +427,7 @@ export default {
         console.log(response.data)
         this.message = "Deleted the employee work history successfully !!";
         this.getWorkHistoryById();
+        window.scrollTo(0,0);
         });
         }
     },

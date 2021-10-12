@@ -19,13 +19,23 @@ export default new Router({
     },
     {
       path: "/addEmployee",
-      name: "addEmployee",
+      name: "employee-add",
       component: () => import("@/components/EmployeeBasic/EmployeeAdd")
     },
     {
         path: "/updateEmployee/:id",
-        name: "employee-details",
+        name: "employee-update",
         component: () => import("@/components/EmployeeBasic/EmployeeUpdate")
-      },
+    },
+    {
+      path: "/addWorkHistory/:id",
+      name: "addWorkHistory",
+      component: () => import("@/components/WorkHistory/WorkingHistoryAdd"),
+    },
+    {
+      path: "/updateWorkHistory/:id",
+      name: "updateWorkHistory",
+      component: () => import("@/components/WorkHistory/WorkingHistoryUpdate"),
+    },
   ]
 });
