@@ -86,7 +86,7 @@
                                                                     <div class="form-outline">
                                                                         <label class="form-label">Ms From Date Day</label>
                                                                         <select class="form-control form-control" required v-model="employees.msFromDateDay">
-                                                                            <option value=null>--Select--</option>
+                                                                            <option value=0>--Select--</option>
                                                                             <option value="1">1</option><option value="2">2</option>
                                                                             <option value="3">3</option><option value="4">4</option>
                                                                             <option value="5">5</option><option value="6">6</option>
@@ -110,7 +110,7 @@
                                                                     <div class="form-outline">
                                                                         <label class="form-label" for="form3Examplev3">Ms From Date Month</label>
                                                                         <select class="form-control form-control" required v-model="employees.msFromDateMonth">
-                                                                            <option value=null>--Select--</option>
+                                                                            <option value=0>--Select--</option>
                                                                             <option value="1">January</option><option value="2">February</option>
                                                                             <option value="3">March</option><option value="4">April</option>
                                                                             <option value="5">May</option><option value="6">June</option>
@@ -123,7 +123,7 @@
                                                                 <div class="col-md-4 mb-4 pb-2">
                                                                     <div class="form-outline">
                                                                         <label class="form-label" for="form3Examplev3">Ms From Date Year</label>
-                                                                        <input type="text" id="form3Examplev4" required v-model="employees.msFromDateYear" placeholder="Date Year" class="form-control form-control" />
+                                                                        <input type="text" id="form3Examplev4" v-model="employees.msFromDateYear" placeholder="Date Year" class="form-control form-control" />
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -133,7 +133,7 @@
                                                                     <div class="form-outline">
                                                                         <label class="form-label">Ms To Date Day</label>
                                                                         <select class="form-control form-control" v-model="employees.msToDateDay">
-                                                                            <option value=null>--Select--</option>
+                                                                            <option value=0>--Select--</option>
                                                                             <option value="1">1</option><option value="2">2</option>
                                                                             <option value="3">3</option><option value="4">4</option>
                                                                             <option value="5">5</option><option value="6">6</option>
@@ -157,7 +157,7 @@
                                                                     <div class="form-outline">
                                                                         <label class="form-label" for="form3Examplev3">Ms To Date Month</label>
                                                                         <select class="form-control form-control" v-model="employees.msToDateMonth">
-                                                                            <option value=null>--Select--</option>
+                                                                            <option value=0>--Select--</option>
                                                                             <option value="1">January</option><option value="2">February</option>
                                                                             <option value="3">March</option><option value="4">April</option>
                                                                             <option value="5">May</option><option value="6">June</option>
@@ -179,7 +179,7 @@
                                                                     <div class="form-outline">
                                                                         <label class="form-label">Ws From Date Day</label>
                                                                         <select class="form-control form-control" required v-model="employees.wsFromDateDay">
-                                                                            <option value=null>--Select--</option>
+                                                                            <option value=0>--Select--</option>
                                                                             <option value="1">1</option><option value="2">2</option>
                                                                             <option value="3">3</option><option value="4">4</option>
                                                                             <option value="5">5</option><option value="6">6</option>
@@ -204,7 +204,7 @@
                                                                     <div class="form-outline">
                                                                         <label class="form-label" for="form3Examplev3">Ws From Date Month</label>
                                                                         <select class="form-control form-control" required v-model="employees.wsFromDateMonth">
-                                                                            <option value=null>--Select--</option>
+                                                                            <option value=0>--Select--</option>
                                                                             <option value="1">January</option><option value="2">February</option>
                                                                             <option value="3">March</option><option value="4">April</option>
                                                                             <option value="5">May</option><option value="6">June</option>
@@ -227,7 +227,7 @@
                                                                     <div class="form-outline">
                                                                         <label class="form-label">Ws To Date Day</label>
                                                                         <select class="form-control form-control" v-model="employees.wsToDateDay">
-                                                                            <option value=null>--Select--</option>
+                                                                            <option value=0>--Select--</option>
                                                                             <option value="1">1</option><option value="2">2</option>
                                                                             <option value="3">3</option><option value="4">4</option>
                                                                             <option value="5">5</option><option value="6">6</option>
@@ -252,7 +252,7 @@
                                                                     <div class="form-outline">
                                                                         <label class="form-label" for="form3Examplev3">Ws To Date Month</label>
                                                                         <select class="form-control form-control" v-model="employees.wsToDateMonth">
-                                                                            <option value=null>--Select--</option>
+                                                                            <option value=0>--Select--</option>
                                                                             <option value="1">January</option><option value="2">February</option>
                                                                             <option value="3">March</option><option value="4">April</option>
                                                                             <option value="5">May</option><option value="6">June</option>
@@ -334,7 +334,7 @@ export default {
             this.employees.monthlyInsurances=response.data.monthlyInsurances,
             this.employees.msFromDateDay=response.data.msFromDateDay,
             this.employees.msFromDateMonth=response.data.msFromDateMonth,
-            this.employees.msFromDateYear=response.data.msFromYear,
+            this.employees.msFromDateYear=response.data.msFromDateYear,
             this.employees.msToDateDay=response.data.msToDateDay,
             this.employees.msToDateMonth=response.data.msToDateMonth,
             this.employees.msToDateYear=response.data.msToDateYear,
@@ -348,7 +348,7 @@ export default {
             this.employees.wsfromDateYear=response.data.wsfromDateYear,
             this.employees.wsToDateDay=response.data.wsToDateDay,
             this.employees.wsToDateMonth=response.data.wsToDateMonth,
-            this.employees.wsToDateYear=response.wsToDateYear
+            this.employees.wsToDateYear=response.data.wsToDateYear
             console.log(response)
         });
     },     
