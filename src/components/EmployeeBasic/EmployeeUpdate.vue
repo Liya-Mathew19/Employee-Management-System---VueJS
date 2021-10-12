@@ -1,3 +1,9 @@
+<!--
+Employee Update Form element
+
+@author Liya Mathew
+@since 10.10.2021
+-->
 <template>
   <div class="main-content">
 	<div class="row ">
@@ -299,7 +305,7 @@
 import EmployeeService from "@/services/EmployeeService";
 
 export default {
-  name: "employees-add",
+  name: "employees-update",
   data() {
     return {
       employees: {

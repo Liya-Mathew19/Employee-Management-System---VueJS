@@ -1,3 +1,10 @@
+<!--
+Employee List
+
+@author Liya Mathew
+@since 10.10.2021
+-->
+
 <template>
   <div class="main-content">
 	<div class="row">
@@ -14,7 +21,7 @@
                 </div>
                 <div class="card-footer">
                     <i class="material-icons text-info">info</i>
-                    <a href="#">  See detailed list below</a>
+                    <a href="#" style="text-decoration:none"><span style="padding-left: 15px;"> See detailed list below</span></a>
                 </div>
             </div>
         </div>
@@ -47,7 +54,7 @@
                         <table class="table table-hover table-bordered">
                             <thead>
                                 <tr class="bg-success text-white">
-                                    <th>ID</th>
+                                    <th>Personal ID</th>
                                     <th>Name</th>
                                     <th>Date of Birth</th>
                                     <th>Phone</th>
@@ -58,7 +65,7 @@
                            
                             <tbody>
                                 <tr v-for="employee in employees" v-bind:key="employee.employeeIdNumber">
-                                    <td>{{employee.employeeIdNumber}}</td>
+                                    <td>{{employee.personalIdNumber}}</td>
                                     <td>{{employee.firstName}} {{employee.lastName}}</td>
                                     <td>{{employee.dayOfBirth}}/{{employee.monthOfBirth}}/{{employee.yearOfBirth}} </td>
                                     <td>{{employee.cellularPhone}}</td>
@@ -109,12 +116,12 @@ export default {
             });
             }
         },
-        getEmployeeById(id){
-            EmployeeService.getEmployeeById(id).then(response =>{
-                //empId = response.data.employeeIdNumber;
-                console.log(response)
-            });
-        },
+    getEmployeeById(id){
+        EmployeeService.getEmployeeById(id).then(response =>{
+            //empId = response.data.employeeIdNumber;
+            console.log(response)
+        });
+    },
   },
   mounted() {
     this.retrieveEmployees();

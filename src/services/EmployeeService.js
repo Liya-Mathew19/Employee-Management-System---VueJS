@@ -1,3 +1,8 @@
+// Employee Services - List of calls to api
+
+// @author Liya Mathew
+// @since 10.10.2021
+
 import http from "../http-common";
 
 class EmployeeService {

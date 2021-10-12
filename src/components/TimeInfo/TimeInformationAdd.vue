@@ -1,11 +1,5 @@
-<!--
-Working History Add From element
-
-@author Abirami K P
-@since 11.10.2021
--->
 <template>
-<div class="main-content">
+  <div class="main-content">
 	<div class="row ">
         <div class="col-lg-12 col-md-12">
             <div class="card" style="min-height: 485px">
@@ -16,7 +10,7 @@ Working History Add From element
                         </span> 
                         <span class="p-3">Back</span>
                     </button>
-                    <h4 class="card-title">ADD EMPLOYEE WORKING HISTORY</h4>
+                    <h4 class="card-title">ADD NEW EMPLOYEE TIME INFORMATION</h4>
                     </div>
                     <hr>
                     <div class="card-content">
@@ -29,36 +23,35 @@ Working History Add From element
                                                 <div class="row g-0">
                                                     <div class="col-lg-6">
                                                         <div class="p-5">
-                                                            <h3 class="fw-normal mb-5" style="color: #4835d4;">Company Information</h3>
+                                                            <h3 class="fw-normal mb-5" style="color: #4835d4;">Time Information</h3>
+                                                            
                                                             <div class="mb-4 pb-2">
                                                                 <div class="form-outline form-white">
-                                                                    <label class="form-label">Employee ID</label>
+                                                                    <label class="form-label">New Employee Id Nmber</label>
                                                                     <input type="text" disabled="disabled == 1" required v-model="this.$route.params.id" class="form-control form-control" />
                                                                 </div> 
                                                             </div>
                                                             <div class="mb-4 pb-2">
-                                                                <label class="form-label">Employer Name</label>
-                                                                <input type="text" required v-model="employees.employerName" placeholder="Employer Name" class="form-control form-control" />
+                                                                <label class="form-label">Worked Hours</label>
+                                                                <input type="text" required v-model="employees.workred_Hours" placeholder="Worked Hours" class="form-control form-control" />
                                                             </div>
                                                             <div class="mb-4 pb-2">
-                                                                <label class="form-label">Company Name</label>
-                                                                <input type="text" required v-model="employees.companyName" placeholder="Company Name" class="form-control form-control" />
+                                                                <label class="form-label">Office Hours</label>
+                                                                <input type="text" required v-model="employees.off_Hours" placeholder="Office Hours" class="form-control form-control" />
                                                             </div>
                                                             <div class="mb-4 pb-2">
-                                                                <label class="form-label">Employee Address</label>
-                                                                <textarea required v-model="employees.employerAddress" class="form-control form-control" />
+                                                                <label class="form-label">Days Off</label>
+                                                                <input type="text" required v-model="employees.days_Off" placeholder="Number of Days off" class="form-control form-control" />
+                                                            </div>
+                                                            <div class="mb-4 pb-2">
+                                                                <label class="form-label">Over Time</label>
+                                                                <textarea required v-model="employees.over_Time" class="form-control form-control" />
                                                             </div>                                            
                                                             <div class="row">
                                                                 <div class="col-md-6 mb-4 pb-2">
                                                                     <div class="form-outline">
-                                                                        <label class="form-label">Mobile</label>
-                                                                        <input type="text" required v-model="employees.employerCellularPhone" placeholder="Mobile Number" class="form-control form-control" />
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-6 mb-4 pb-2">
-                                                                    <div class="form-outline">
-                                                                        <label class="form-label" for="form3Examplev3">Office Phone</label>
-                                                                        <input type="text" required id="form3Examplev3" v-model="employees.employerOfficePhone" placeholder="Office Phone Number" class="form-control form-control" />
+                                                                        <label class="form-label">Extra Days</label>
+                                                                        <input type="text" required v-model="employees.extra_Days" placeholder="Extra Day Worked" class="form-control form-control" />
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -66,26 +59,11 @@ Working History Add From element
                                                     </div>
                                                     <div class="col-lg-6 bg-indigo text-white">
                                                         <div class="p-5">
-                                                            <h3 class="fw-normal mb-5">Previous Work Details</h3>
-                                                            <div class="mb-4 pb-2">
-                                                                <div class="form-outline form-white">
-                                                                    <label class="form-label">Qualification</label>
-                                                                    <input type="text" required v-model="employees.previousQualification" placeholder="Qualification" class="form-control form-control" />
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="mb-4 pb-2">
-                                                                <div class="form-outline form-white">
-                                                                    <label class="form-label" for="form3Examplea3">Previous Experience</label>
-                                                                    <input type="text" required id="form3Examplea3" v-model="employees.previousExperience" placeholder="Experience" class="form-control form-control" />
-                                                                </div>
-                                                            </div>
-                                        
                                                             <div class="row">
                                                                 <div class="col-md-4 mb-4 pb-2">
                                                                     <div class="form-outline">
                                                                         <label class="form-label">Start Day</label>
-                                                                        <select class="form-control form-control" required v-model="employees.pStartDateDay">
+                                                                        <select class="form-control form-control" required v-model="employees.w_From_Date_Day">
                                                                             <option value=null>--Select--</option>
                                                                             <option value="1">1</option><option value="2">2</option>
                                                                             <option value="3">3</option><option value="4">4</option>
@@ -109,7 +87,7 @@ Working History Add From element
                                                                 <div class="col-md-4 mb-4 pb-2">
                                                                     <div class="form-outline">
                                                                         <label class="form-label" for="form3Examplev3">Start Month</label>
-                                                                        <select class="form-control form-control" required v-model="employees.pStartDateMonth">
+                                                                        <select class="form-control form-control" required v-model="employees.w_From_Date_Month">
                                                                             <option value=null>--Select--</option>
                                                                             <option value="1">January</option><option value="2">February</option>
                                                                             <option value="3">March</option><option value="4">April</option>
@@ -123,7 +101,7 @@ Working History Add From element
                                                                 <div class="col-md-4 mb-4 pb-2">
                                                                     <div class="form-outline">
                                                                         <label class="form-label" for="form3Examplev3">Start Year</label>
-                                                                        <input type="text" id="form3Examplev4" required v-model="employees.pStartDateYear" placeholder="Start Year" class="form-control form-control" />
+                                                                        <input type="text" id="form3Examplev4" required v-model="employees.w_From_Date_Year" placeholder="Start Year" class="form-control form-control" />
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -132,7 +110,7 @@ Working History Add From element
                                                                 <div class="col-md-4 mb-4 pb-2">
                                                                     <div class="form-outline">
                                                                         <label class="form-label">End Day</label>
-                                                                        <select class="form-control form-control" v-model="employees.pEndDateDay">
+                                                                        <select class="form-control form-control" v-model="employees.w_To_Date_Day">
                                                                             <option value=null>--Select--</option>
                                                                             <option value="1">1</option><option value="2">2</option>
                                                                             <option value="3">3</option><option value="4">4</option>
@@ -156,7 +134,7 @@ Working History Add From element
                                                                 <div class="col-md-4 mb-4 pb-2">
                                                                     <div class="form-outline">
                                                                         <label class="form-label" for="form3Examplev3">End Month</label>
-                                                                        <select class="form-control form-control" v-model="employees.pEndDateMonth">
+                                                                        <select class="form-control form-control" v-model="employees.w_To_Date_Month">
                                                                             <option value=null>--Select--</option>
                                                                             <option value="1">January</option><option value="2">February</option>
                                                                             <option value="3">March</option><option value="4">April</option>
@@ -170,11 +148,11 @@ Working History Add From element
                                                                 <div class="col-md-4 mb-4 pb-2">
                                                                     <div class="form-outline">
                                                                         <label class="form-label" for="form3Examplev3">End Year</label>
-                                                                        <input type="text" id="form3Examplev4" v-model="employees.pEndDateYear" placeholder="End Year" class="form-control form-control" />
+                                                                        <input type="text" id="form3Examplev4" v-model="employees.w_To_Date_Year" placeholder="End Year" class="form-control form-control" />
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <button type="button" class="btn btn-warning btn-lg float-right mt-5" v-on:click="saveEmployee()">SUBMIT</button>
+                                                            <button type="button" class="btn btn-warning btn-lg float-right mt-5" v-on:click="saveTime()">SUBMIT</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -190,53 +168,50 @@ Working History Add From element
         </div>
     </div>
 </template>
+
 <script>
-import WorkHistoryServices from "@/services/WorkHistoryService";
+import TimeInformationService from "@/services/TimeInfoService";
 
 export default {
-  name: "workhistory-add",
+  name: "timeinformation-add",
   data() {
     return {
       employees: {
         employeeIdNumber:this.$route.params.id,
-        employerName:"",
-        companyName:"",
-        employerAddress:"",
-        employerCellularPhone:null,
-        employerOfficePhone:null,
-        previousQualification:"",
-        previousExperience:"",
-        pstartDateDay:null,
-        pstartDateMonth:null,
-        pstartDateYear:null,
-        pendDateDay:null,
-        pendDateMonth:null,
-        pendDateYear:null,
+        workred_Hours:"",
+        off_Hours:"",
+        days_Off:"",
+        over_Time:null,
+        extra_Days:null,
+        w_From_Date_Day:null,
+        w_From_Date_Month:null,
+        w_From_Date_Year:null,
+        w_To_Date_Day:null,
+        w_To_Date_Month:null,
+        w_To_Date_Year:null,
         },
     };
   },
   methods: {        
-    saveEmployee() {
+    saveTime() {
       var data = {
         employeeIdNumber:this.$route.params.id,
-        employerName:this.employees.employerName,
-        companyName:this.employees.companyName,
-        employerAddress:this.employees.employerAddress,
-        employerCellularPhone:this.employees.employerCellularPhone,
-        employerOfficePhone:this.employees.employerOfficePhone,
-        previousQualification:this.employees.previousQualification,
-        previousExperience:this.employees.previousExperience,
-        pstartDateDay:this.employees.pStartDateDay,
-        pstartDateMonth:this.employees.pStartDateMonth,
-        pstartDateYear:this.employees.pStartDateYear,
-        pendDateDay:this.employees.pEndDateDay,
-        pendDateMonth:this.employees.pEndDateMonth,
-        pendDateYear:this.employees.pEndDateYear,
+        workred_Hours:this.employees.workred_Hours,
+        off_Hours:this.employees.off_Hours,
+        days_Off:this.employees.days_Off,
+        over_Time:this.employees.over_Time,
+        extra_Days:this.employees.extra_Days,
+        w_From_Date_Day:this.employees.w_From_Date_Day,
+        w_From_Date_Month:this.employees.w_From_Date_Month,
+        w_From_Date_Year:this.employees.w_From_Date_Year,
+        w_To_Date_Day:this.employees.w_To_Date_Day,
+        w_To_Date_Month:this.employees.w_To_Date_Month,
+        w_To_Date_Year:this.employees.w_To_Date_Year,
       };
-      WorkHistoryServices.createWork(data)
+      TimeInformationService.createTimeInfo(data)
         .then(response => {
           console.log(response);
-            alert("Employee work data added successfully!!");
+            alert("Emplployee TimeInformation data added successfully!!");
           this.$router.push("/employees/"+this.employees.employeeIdNumber); 
         })
         .catch(e => {

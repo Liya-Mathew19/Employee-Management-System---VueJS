@@ -13,8 +13,8 @@ class EmployeeService {
     return http.post("/time/timeInfo", data);
   }
 
-  updateTimeInfo(id, data) {
-    return http.put(`/time/timeInfo/${id}`, data);
+  updateTimeInfo(data) {
+    return http.put(`/time/timeInfo`, data);
   }
 
   deleteTimeInfo(id) {

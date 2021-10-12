@@ -1,3 +1,10 @@
+<!--
+Employee Details Page
+
+@author Liya Mathew
+@since 10.10.2021
+-->
+
 <template>
   <div class="main-content">
 	<div class="row ">
@@ -22,12 +29,13 @@
                                             <h4 style="float:left">Basic Details</h4>
                                             <span class="material-icons" style="cursor:pointer;float:right;" v-on:click="deleteEmployee(employees.employeeIdNumber)">delete</span>
                                             <a v-bind:href="'/updateEmployee/'+employees.employeeIdNumber">
-                                            <button type="button" class="btn mr-4 text-white" style="float:right;margin-top: -6px;">
+                                            <button type="button" v-if="!empError" class="btn mr-4 text-white" style="float:right;margin-top: -6px;">
                                                 <span class="material-icons" style="cursor:pointer;">edit</span>
                                             </button></a>
                                         </div>
                                         <div class="card-body">
                                             <div v-if="empError">
+                                                <h6 class="text-center text-danger">No data found !!</h6>
                                                 <button class="btn btn-success">Add Basic Details</button>
                                             </div>
                                             <ul class="list-group" v-else>
@@ -90,18 +98,19 @@
                                         <div class="card-header bg-primary text-white">
                                             <h4 style="float:left">Contact Information</h4>
                                             <span class="material-icons" style="cursor:pointer;float:right" v-on:click="deleteContact(contact.employeeIdNumber)">delete</span>
-                                            <button type="button" class="btn mr-4 text-white" style="float:right;margin-top: -6px;" data-toggle="modal" data-target="#myModal">
+                                            <button type="button" v-if="!contactError" class="btn mr-4 text-white" style="float:right;margin-top: -6px;" data-toggle="modal" data-target="#myModal">
                                                 <span class="material-icons" style="cursor:pointer;">edit</span>
                                             </button>
                                         </div>
                                         <div class="card-body">
                                              <div v-if="contactError">
+                                                 <h6 class="text-center text-danger">No data found !!</h6>
                                                 <button class="btn btn-success">Add Contact</button>
                                             </div>
                                             <ul class="list-group" v-else>
                                                 <li class="list-group-item d-flex justify-content-between">
                                                     <h6 class="mb-0">Contat Person Name</h6>
-                                                    <span class="text-secondary">{{contact.cfirstName}} {{contact.cMiddleName}} {{contact.cLastName}}</span>
+                                                    <span class="text-secondary">{{contact.cfirstName}} {{contact.cmiddleName}} {{contact.clastName}}</span>
                                                 </li>
                                                 <li class="list-group-item d-flex justify-content-between">
                                                     <h6 class="mb-0">Mobile</h6>
@@ -122,13 +131,18 @@
                                         <div class="card-header bg-primary text-white">
                                             <h4 style="float:left">Time Information</h4>
                                             <span class="material-icons" style="cursor:pointer;float:right" v-on:click="deleteTime(time.employeeIdNumber)">delete</span>
-                                            <button type="button" class="btn mr-4 text-white" style="float:right;margin-top: -6px;" data-toggle="modal" data-target="#myModal">
+                                            <a v-bind:href="'/updateTime/'+time.employeeIdNumber">
+                                            <button type="button" v-if="!timeError" class="btn mr-4 text-white" style="float:right;margin-top: -6px;" data-toggle="modal" data-target="#myModal">
                                                 <span class="material-icons" style="cursor:pointer;">edit</span>
                                             </button>
+                                            </a>
                                         </div>
                                         <div class="card-body">
                                              <div v-if="timeError">
+                                                 <h6 class="text-center text-danger">No data found !!</h6>
+                                                 <a v-bind:href="'/addTime/'+employees.employeeIdNumber">
                                                 <button class="btn btn-success">Add Time Information</button>
+                                                </a>
                                             </div>
                                             <ul class="list-group" v-else>
                                                 <li class="list-group-item d-flex justify-content-between">
@@ -176,6 +190,7 @@
                                         </div>
                                         <div class="card-body">
                                             <div v-if="workError">
+                                                <h6 class="text-center text-danger">No data found !!</h6>
                                                <a v-bind:href="'/addWorkHistory/'+employees.employeeIdNumber">
                                                 <button class="btn btn-success">Add Work History</button>
                                                </a>
@@ -226,13 +241,18 @@
                                                     <div class="card-header bg-primary text-white">
                                                         <h4 style="float:left">Salary Information</h4>
                                                         <span class="material-icons" style="cursor:pointer;float:right" v-on:click="deleteSalary(salary.employeeIdNumber)">delete</span>
-                                                        <button type="button" class="btn mr-4 text-white" style="float:right;margin-top: -6px;" data-toggle="modal" data-target="#myModal">
+                                                        <a v-bind:href="'/updateSalary/'+salary.employeeIdNumber">
+                                                        <button type="button" v-if="!salError" class="btn mr-4 text-white" style="float:right;margin-top: -6px;" data-toggle="modal" data-target="#myModal">
                                                             <span class="material-icons" style="cursor:pointer;">edit</span>
                                                         </button>
+                                                        </a>
                                                     </div>
                                                     <div class="card-body">
                                                          <div v-if="salError">
+                                                             <h6 class="text-center text-danger">No data found !!</h6>
+                                                             <a v-bind:href="'/addSalary/'+employees.employeeIdNumber">
                                                             <button class="btn btn-success">Add Salary Information</button>
+                                                            </a>
                                                         </div>
                                                         <ul class="list-group" v-else>
                                                             <li class="list-group-item d-flex justify-content-between">
@@ -378,7 +398,7 @@ export default {
                 this.contactError = e;
             });
         },
-        deleteEmployee(id) {
+    deleteEmployee(id) {
             if(confirm("Are you sure? Do you want to delete this whole employee details?")){
             EmployeeService.deleteEmployee(id).then(response => {
                 console.log(response.data)
@@ -396,17 +416,17 @@ export default {
         ContactService.deleteContact(id).then(response => {
         console.log(response.data)
         this.message = "Deleted the employee contact details successfully !!";
-        this.getContactInfoById();
+        this.getContactInfoById(id);
         window.scrollTo(0,0);
         });
         }
     },
     deleteSalary(id) {
         if(confirm("Are you sure? Do you want to delete this salary?")){
-        ContactService.deleteSalary(id).then(response => {
+        SalaryInfoService.deleteSalaryData(id).then(response => {
         console.log(response.data)
         this.message = "Deleted the employee salary details successfully !!";
-        this.getSalaryById();
+        this.getSalaryById(id);
         window.scrollTo(0,0);
         });
         }
@@ -416,7 +436,7 @@ export default {
         TimeInfoService.deleteTimeInfo(id).then(response => {
         console.log(response.data)
         this.message = "Deleted the employee time details successfully !!";
-        this.getTimeInfoById();
+        this.getTimeInfoById(id);
         window.scrollTo(0,0);
         });
         }
@@ -426,7 +446,7 @@ export default {
         WorkHistoryService.deleteWork(id).then(response => {
         console.log(response.data)
         this.message = "Deleted the employee work history successfully !!";
-        this.getWorkHistoryById();
+        this.getWorkHistoryById(id);
         window.scrollTo(0,0);
         });
         }

@@ -37,5 +37,25 @@ export default new Router({
       name: "updateWorkHistory",
       component: () => import("@/components/WorkHistory/WorkingHistoryUpdate"),
     },
+    {
+      path: "/addSalary/:id",
+      name: "addSalary",
+      component: () => import("@/components/EmployeeSalary/EmployeeSalaryAdd"),
+    },
+    {
+      path: "/updateSalary/:id",
+      name: "updateSalary",
+      component: () => import("@/components/EmployeeSalary/EmployeeSalaryUpdate"),
+    },
+    {
+      path: "/addTime/:id",
+      name: "addTime",
+      component: () => import("@/components/TimeInfo/TimeInformationAdd"),
+    },
+    {
+      path: "/updateTime/:id",
+      name: "updateTime",
+      component: () => import("@/components/TimeInfo/TimeInformationUpdate"),
+    },
   ]
 });

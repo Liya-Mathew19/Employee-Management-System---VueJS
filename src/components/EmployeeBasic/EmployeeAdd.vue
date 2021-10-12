@@ -1,5 +1,11 @@
+<!--
+Employee Add form element
+
+@author Liya Mathew
+@since 10.10.2021
+-->
 <template>
-  <div class="main-content">
+<div class="main-content">
 	<div class="row ">
         <div class="col-lg-12 col-md-12">
             <div class="card" style="min-height: 485px">

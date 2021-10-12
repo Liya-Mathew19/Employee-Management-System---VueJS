@@ -13,12 +13,12 @@ class EmployeeService {
     return http.post("/salary/employee_salary/", data);
   }
 
-  updateSalary(id, data) {
-    return http.put(`/salary/employee_salary/"${id}`, data);
+  updateSalary(data) {
+    return http.put(`/salary/employee_salary`, data);
   }
 
-  deleteSalary(id) {
-    return http.delete(`/salary/employee_salary/"${id}`);
+  deleteSalaryData(id) {
+    return http.delete(`/salary/employee_salary/${id}`);
   }
 }
 
