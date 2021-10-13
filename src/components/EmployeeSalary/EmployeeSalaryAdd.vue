@@ -40,15 +40,15 @@
                                                             </div>
                                                             <div class="mb-4 pb-2">
                                                                 <label class="form-label">Monthly Taxes</label>
-                                                                <input type="text" required v-model="employees.monthlyTaxes" class="form-control form-control" />
+                                                                <input type="text" required v-model="employees.monthlyTaxes" placeholder="Monthly Taxes" class="form-control form-control" />
                                                             </div>     
                                                             <div class="mb-4 pb-2">
                                                                 <label class="form-label">Monthly Deductions</label>
-                                                                <input type="text" required v-model="employees.monthlyDeductions" class="form-control form-control" />
+                                                                <input type="text" required v-model="employees.monthlyDeductions" placeholder="Monthly Deductions" class="form-control form-control" />
                                                             </div>     
                                                             <div class="mb-4 pb-2">
                                                                 <label class="form-label">Monthly Insurances</label>
-                                                                <input type="text" required v-model="employees.monthlyInsurances" class="form-control form-control" />
+                                                                <input type="text" required v-model="employees.monthlyInsurances" placeholder="Monthly Insurances" class="form-control form-control" />
                                                             </div>      
 
                                                             <div class="mb-4 pb-2">
@@ -58,22 +58,22 @@
 
                                                              <div class="mb-4 pb-2">
                                                                 <label class="form-label">Weekly Money Currency</label>
-                                                                <input type="text" required v-model="employees.weeklyMoneyCurrency" class="form-control form-control" />
+                                                                <input type="text" required v-model="employees.weeklyMoneyCurrency" placeholder="Weekly Money Currency" class="form-control form-control" />
                                                             </div>         
 
                                                             <div class="mb-4 pb-2">
                                                                 <label class="form-label">Weekly Taxes</label>
-                                                                <input type="text" required v-model="employees.weeklyTaxes" class="form-control form-control" />
+                                                                <input type="text" required v-model="employees.weeklyTaxes" placeholder="Weekly Taxes" class="form-control form-control" />
                                                             </div>                     
 
                                                             <div class="mb-4 pb-2">
                                                                 <label class="form-label">Weekly Deductions</label>
-                                                                <input type="text" required v-model="employees.weeklyDeductions" class="form-control form-control" />
+                                                                <input type="text" required v-model="employees.weeklyDeductions" placeholder="Weekly Deductions" class="form-control form-control" />
                                                             </div>    
 
                                                             <div class="mb-4 pb-2">
                                                                 <label class="form-label">Weekly Insurances</label>
-                                                                <input type="text" required v-model="employees.weeklyInsurances" class="form-control form-control" />
+                                                                <input type="text" required v-model="employees.weeklyInsurances" placeholder="Weekly Insurances" class="form-control form-control" />
                                                             </div>                                          
                                                             
                                                         </div> 

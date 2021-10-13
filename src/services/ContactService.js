@@ -13,8 +13,8 @@ class EmployeeService {
     return http.post("/contacts/contact_info", data);
   }
 
-  updateContact(id, data) {
-    return http.put(`/contacts/contact_info/${id}`, data);
+  updateContact(data) {
+    return http.put("/contacts/contact_info", data);
   }
 
   deleteContact(id) {

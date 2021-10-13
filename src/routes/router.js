@@ -57,5 +57,15 @@ export default new Router({
       name: "updateTime",
       component: () => import("@/components/TimeInfo/TimeInformationUpdate"),
     },
+    {
+      path: "/addContact/:id",
+      name: "addContact",
+      component: () => import("@/components/ContactInfo/ContactAdd"),
+    },
+    {
+      path: "/updateContact/:id",
+      name: "updateContact",
+      component: () => import("@/components/ContactInfo/ContactUpdate"),
+    },
   ]
 });

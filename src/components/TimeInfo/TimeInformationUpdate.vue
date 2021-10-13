@@ -45,15 +45,11 @@
                                                             </div>
                                                             <div class="mb-4 pb-2">
                                                                 <label class="form-label">Over Time</label>
-                                                                <textarea required v-model="employees.over_Time" class="form-control form-control" />
-                                                            </div>                                            
-                                                            <div class="row">
-                                                                <div class="col-md-6 mb-4 pb-2">
-                                                                    <div class="form-outline">
-                                                                        <label class="form-label">Extra Days</label>
-                                                                        <input type="text" required v-model="employees.extra_Days" placeholder="Extra Day Worked" class="form-control form-control" />
-                                                                    </div>
-                                                                </div>
+                                                                <input type="text" required v-model="employees.over_Time" class="form-control form-control" placeholder="Over time" />
+                                                            </div>     
+                                                            <div class="mb-4 pb-2">
+                                                                <label class="form-label">Extra Days</label>
+                                                                <input type="text" required v-model="employees.extra_Days" placeholder="Extra Day Worked" class="form-control form-control" />
                                                             </div>
                                                         </div> 
                                                     </div>

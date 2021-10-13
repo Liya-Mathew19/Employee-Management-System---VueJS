@@ -98,14 +98,18 @@ Employee Details Page
                                         <div class="card-header bg-primary text-white">
                                             <h4 style="float:left">Contact Information</h4>
                                             <span class="material-icons" style="cursor:pointer;float:right" v-on:click="deleteContact(contact.employeeIdNumber)">delete</span>
+                                            <a v-bind:href="'/updateContact/'+contact.employeeIdNumber">
                                             <button type="button" v-if="!contactError" class="btn mr-4 text-white" style="float:right;margin-top: -6px;" data-toggle="modal" data-target="#myModal">
                                                 <span class="material-icons" style="cursor:pointer;">edit</span>
                                             </button>
+                                            </a>
                                         </div>
                                         <div class="card-body">
                                              <div v-if="contactError">
-                                                 <h6 class="text-center text-danger">No data found !!</h6>
+                                                <h6 class="text-center text-danger">No data found !!</h6>
+                                                <a v-bind:href="'/addContact/'+employees.employeeIdNumber">
                                                 <button class="btn btn-success">Add Contact</button>
+                                                </a>
                                             </div>
                                             <ul class="list-group" v-else>
                                                 <li class="list-group-item d-flex justify-content-between">

@@ -85,7 +85,7 @@ Working History Add From element
                                                                 <div class="col-md-4 mb-4 pb-2">
                                                                     <div class="form-outline">
                                                                         <label class="form-label">Start Day</label>
-                                                                        <select class="form-control form-control" required v-model="employees.pStartDateDay">
+                                                                        <select class="form-control form-control" required v-model="employees.pstartDateDay">
                                                                             <option value=null>--Select--</option>
                                                                             <option value="1">1</option><option value="2">2</option>
                                                                             <option value="3">3</option><option value="4">4</option>
@@ -109,7 +109,7 @@ Working History Add From element
                                                                 <div class="col-md-4 mb-4 pb-2">
                                                                     <div class="form-outline">
                                                                         <label class="form-label" for="form3Examplev3">Start Month</label>
-                                                                        <select class="form-control form-control" required v-model="employees.pStartDateMonth">
+                                                                        <select class="form-control form-control" required v-model="employees.pstartDateMonth">
                                                                             <option value=null>--Select--</option>
                                                                             <option value="1">January</option><option value="2">February</option>
                                                                             <option value="3">March</option><option value="4">April</option>
@@ -123,7 +123,7 @@ Working History Add From element
                                                                 <div class="col-md-4 mb-4 pb-2">
                                                                     <div class="form-outline">
                                                                         <label class="form-label" for="form3Examplev3">Start Year</label>
-                                                                        <input type="text" id="form3Examplev4" required v-model="employees.pStartDateYear" placeholder="Start Year" class="form-control form-control" />
+                                                                        <input type="text" id="form3Examplev4" required v-model="employees.pstartDateYear" placeholder="Start Year" class="form-control form-control" />
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -132,7 +132,7 @@ Working History Add From element
                                                                 <div class="col-md-4 mb-4 pb-2">
                                                                     <div class="form-outline">
                                                                         <label class="form-label">End Day</label>
-                                                                        <select class="form-control form-control" v-model="employees.pEndDateDay">
+                                                                        <select class="form-control form-control" v-model="employees.pendDateDay">
                                                                             <option value=null>--Select--</option>
                                                                             <option value="1">1</option><option value="2">2</option>
                                                                             <option value="3">3</option><option value="4">4</option>
@@ -156,7 +156,7 @@ Working History Add From element
                                                                 <div class="col-md-4 mb-4 pb-2">
                                                                     <div class="form-outline">
                                                                         <label class="form-label" for="form3Examplev3">End Month</label>
-                                                                        <select class="form-control form-control" v-model="employees.pEndDateMonth">
+                                                                        <select class="form-control form-control" v-model="employees.pendDateMonth">
                                                                             <option value=null>--Select--</option>
                                                                             <option value="1">January</option><option value="2">February</option>
                                                                             <option value="3">March</option><option value="4">April</option>
@@ -170,7 +170,7 @@ Working History Add From element
                                                                 <div class="col-md-4 mb-4 pb-2">
                                                                     <div class="form-outline">
                                                                         <label class="form-label" for="form3Examplev3">End Year</label>
-                                                                        <input type="text" id="form3Examplev4" v-model="employees.pEndDateYear" placeholder="End Year" class="form-control form-control" />
+                                                                        <input type="text" id="form3Examplev4" v-model="employees.pendDateYear" placeholder="End Year" class="form-control form-control" />
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -226,12 +226,12 @@ export default {
         employerOfficePhone:this.employees.employerOfficePhone,
         previousQualification:this.employees.previousQualification,
         previousExperience:this.employees.previousExperience,
-        pstartDateDay:this.employees.pStartDateDay,
-        pstartDateMonth:this.employees.pStartDateMonth,
-        pstartDateYear:this.employees.pStartDateYear,
-        pendDateDay:this.employees.pEndDateDay,
-        pendDateMonth:this.employees.pEndDateMonth,
-        pendDateYear:this.employees.pEndDateYear,
+        pstartDateDay:this.employees.pstartDateDay,
+        pstartDateMonth:this.employees.pstartDateMonth,
+        pstartDateYear:this.employees.pstartDateYear,
+        pendDateDay:this.employees.pendDateDay,
+        pendDateMonth:this.employees.pendDateMonth,
+        pendDateYear:this.employees.pendDateYear,
       };
       WorkHistoryServices.createWork(data)
         .then(response => {
